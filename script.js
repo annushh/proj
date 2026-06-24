@@ -44,4 +44,59 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+  const answers = document.querySelectorAll('.test-answer');
+
+answers.forEach(button => {
+  button.addEventListener('click', () => {
+    const parent = button.parentElement;
+
+    parent.querySelectorAll('.test-answer').forEach(btn => {
+      btn.classList.remove('selected');
+    });
+
+    button.classList.add('selected');
+  });
 });
+
+const resultButton = document.getElementById('showResult');
+const resultBlock = document.getElementById('testResult');
+
+if (resultButton) {
+  resultButton.addEventListener('click', () => {
+
+    let score = 0;
+    let answered = 0;
+
+    document.querySelectorAll('.test-question').forEach(question => {
+
+      const selected = question.querySelector('.selected');
+
+      if (selected) {
+        score += Number(selected.dataset.score);
+        answered++;
+      }
+    });
+
+    if (answered < 5) {
+      resultBlock.style.display = 'block';
+      resultBlock.textContent =
+        'Сначала ответь на все вопросы.';
+      return;
+    }
+
+    resultBlock.style.display = 'block';
+
+    if (score <= 2) {
+      resultBlock.innerHTML =
+        '🙂 Возможно, тебе больше подойдут другие направления IT, но попробовать ML всё равно стоит.';
+    } else if (score <= 4) {
+      resultBlock.innerHTML =
+        '🚀 У тебя есть хорошие предпосылки для старта в Machine Learning.';
+    } else {
+      resultBlock.innerHTML =
+        '🔥 Отлично! Похоже, профессия ML-инженера действительно может тебе подойти.';
+    }
+  });
+}
+});
+
