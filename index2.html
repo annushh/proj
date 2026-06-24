@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML-инженер — профессия будущего</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="page-bg" aria-hidden="true">
+      <canvas class="ml-canvas" id="mlCanvas"></canvas>
+      <div class="bg-circle large"></div>
+      <div class="bg-circle medium"></div>
+      <div class="bg-circle small"></div>
+      <div class="ml-wave wave-a"></div>
+      <div class="ml-wave wave-b"></div>
+      <div class="ml-orbit orbit-a"><span></span></div>
+      <div class="ml-orbit orbit-b"><span></span></div>
+      <div class="ml-gradient-trail trail-a"></div>
+      <div class="ml-gradient-trail trail-b"></div>
+      <div class="ml-data-arc data-arc-a"></div>
+      <div class="ml-data-arc data-arc-b"></div>
+      <span class="ml-symbol symbol-1">Σ</span>
+      <span class="ml-symbol symbol-2">∇</span>
+      <span class="ml-symbol symbol-3">ƒ(x)</span>
+      <span class="ml-symbol symbol-4">01</span>
+      <span class="ml-symbol symbol-5">η</span>
+      <span class="ml-symbol symbol-6">λ</span>
+    </div>
+
+    <header class="hero section reveal">
+      <div class="hero-content">
+        <div class="hero-corner-art hero-corner-left" aria-hidden="true">
+          <svg viewBox="0 0 240 160">
+            <g class="corner-grid-lines">
+              <path d="M18 96C58 74 78 38 126 42C164 45 181 70 222 52"/>
+              <path d="M20 124C64 116 88 88 126 96C164 104 188 126 224 106"/>
+              <path d="M56 28V126"/>
+              <path d="M126 20V134"/>
+              <path d="M194 34V120"/>
+            </g>
+            <g class="corner-dots">
+              <circle cx="18" cy="96" r="4"/>
+              <circle cx="56" cy="70" r="5"/>
+              <circle cx="126" cy="42" r="6"/>
+              <circle cx="194" cy="64" r="5"/>
+              <circle cx="222" cy="52" r="4"/>
+              <circle cx="20" cy="124" r="4"/>
+              <circle cx="126" cy="96" r="5"/>
+              <circle cx="224" cy="106" r="4"/>
+            </g>
+            <path class="corner-pulse" d="M18 96C58 74 78 38 126 42C164 45 181 70 222 52"/>
+          </svg>
+        </div>
+
+        <div class="hero-corner-art hero-corner-right" aria-hidden="true">
+          <svg viewBox="0 0 240 160">
+            <g class="corner-orbits">
+              <circle cx="168" cy="72" r="42"/>
+              <circle cx="168" cy="72" r="68"/>
+              <path d="M64 112C90 70 124 52 168 72C198 86 212 110 226 136"/>
+              <path d="M30 48C70 62 104 60 132 34"/>
+            </g>
+            <g class="corner-dots">
+              <circle cx="64" cy="112" r="5"/>
+              <circle cx="102" cy="74" r="4"/>
+              <circle cx="168" cy="72" r="7"/>
+              <circle cx="202" cy="98" r="4"/>
+              <circle cx="226" cy="136" r="5"/>
+              <circle cx="30" cy="48" r="4"/>
+              <circle cx="132" cy="34" r="5"/>
+            </g>
+            <path class="corner-pulse corner-pulse--reverse" d="M64 112C90 70 124 52 168 72C198 86 212 110 226 136"/>
+          </svg>
+        </div>
+
+        <div class="hero-heading">
+          <div class="hero-icon icon-box" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path class="chip-shell" d="M21 14h22c4 0 7 3 7 7v22c0 4-3 7-7 7H21c-4 0-7-3-7-7V21c0-4 3-7 7-7Z"/>
+              <path d="M25 8v6M32 8v6M39 8v6M25 50v6M32 50v6M39 50v6"/>
+              <path d="M8 25h6M8 32h6M8 39h6M50 25h6M50 32h6M50 39h6"/>
+              <circle cx="24" cy="25" r="4"/>
+              <circle cx="40" cy="24" r="4"/>
+              <circle cx="32" cy="39" r="5"/>
+              <path d="M27.5 26.2 36.5 24.8"/>
+              <path d="M26.5 28.3 29.8 35.2"/>
+              <path d="M38.1 27.3 34.5 35"/>
+              <path class="icon-spark" d="M48 11l1.8 3.8 4.2 1.7-4.2 1.7L48 22l-1.8-3.8-4.2-1.7 4.2-1.7L48 11Z"/>
+            </svg>
+          </div>
+          <p class="eyebrow">Профессия в IT</p>
+          <h1>
+            <span class="hero-title-line">ML</span>
+            <span class="hero-title-line">инженер</span>
+          </h1>
+        </div>
+
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="hero-text">Специалист, который превращает данные в умные сервисы: рекомендации, прогнозы, чат-ботов, AI-агентов и системы автоматизации.</p>
+
+            <div class="hero-actions">
+              <a class="primary-button" id="careerButton" href="#career">Как начать карьеру</a>
+              <a class="secondary-button" href="#career-test">Пройти мини-тест</a>
+            </div>
+
+            <div class="hero-badges" aria-label="Ключевые навыки">
+              <span>Python</span>
+              <span>Data</span>
+              <span>AI</span>
+              <span>LLM</span>
+              <span>Production</span>
+              <span class="hero-badge-note">данные → модель → результат</span>
+            </div>
+
+            <div class="hero-stats" aria-label="Что делает ML-инженер">
+              <div>
+                <strong>01</strong>
+                <span>ищет закономерности</span>
+              </div>
+              <div>
+                <strong>02</strong>
+                <span>обучает модели</span>
+              </div>
+              <div>
+                <strong>03</strong>
+                <span>запускает AI-сервисы</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-card">
+              <div class="visual-topline">
+                <span>model training</span>
+                <span class="live-dot">live</span>
+              </div>
+
+              <span class="visual-particle particle-a"></span>
+              <span class="visual-particle particle-b"></span>
+              <span class="visual-particle particle-c"></span>
+
+              <div class="visual-floating visual-floating-a">input</div>
+              <div class="visual-floating visual-floating-b">features</div>
+              <div class="visual-floating visual-floating-c">output</div>
+
+              <svg class="hero-network" viewBox="0 0 520 430">
+                <defs>
+                  <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                  <linearGradient id="trainGradient" x1="56" y1="372" x2="466" y2="250" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="rgba(17,17,17,.55)"/>
+                    <stop offset="1" stop-color="rgba(143,216,255,.95)"/>
+                  </linearGradient>
+                </defs>
+
+                <g class="network-zone">
+                  <g class="network-links">
+                    <path d="M82 58 L238 62"/>
+                    <path d="M82 58 L238 128"/>
+                    <path d="M82 58 L238 194"/>
+                    <path d="M82 124 L238 62"/>
+                    <path d="M82 124 L238 128"/>
+                    <path d="M82 124 L238 194"/>
+                    <path d="M82 190 L238 62"/>
+                    <path d="M82 190 L238 128"/>
+                    <path d="M82 190 L238 194"/>
+                    <path d="M238 62 L394 94"/>
+                    <path d="M238 62 L394 166"/>
+                    <path d="M238 128 L394 94"/>
+                    <path d="M238 128 L394 166"/>
+                    <path d="M238 194 L394 94"/>
+                    <path d="M238 194 L394 166"/>
+                  </g>
+
+                  <path id="signalPathA" class="signal-path" d="M82 58 L238 128 L394 94"/>
+                  <path id="signalPathB" class="signal-path signal-path--secondary" d="M82 190 L238 194 L394 166"/>
+                  <path id="signalPathC" class="signal-path signal-path--dark" d="M82 124 L238 62 L394 166"/>
+                  <circle class="signal-dot" r="5" filter="url(#softGlow)">
+                    <animateMotion dur="3.8s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#signalPathA"/>
+                    </animateMotion>
+                  </circle>
+                  <circle class="signal-dot signal-dot--soft" r="4.5" filter="url(#softGlow)">
+                    <animateMotion dur="4.7s" begin="-1.4s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#signalPathB"/>
+                    </animateMotion>
+                  </circle>
+                  <circle class="signal-dot signal-dot--dark" r="3.8" filter="url(#softGlow)">
+                    <animateMotion dur="5.3s" begin="-2.1s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#signalPathC"/>
+                    </animateMotion>
+                  </circle>
+
+                  <g class="network-nodes">
+                    <circle cx="82" cy="58" r="11"/>
+                    <circle cx="82" cy="124" r="9"/>
+                    <circle cx="82" cy="190" r="11"/>
+                    <circle cx="238" cy="62" r="10"/>
+                    <circle cx="238" cy="128" r="13"/>
+                    <circle cx="238" cy="194" r="10"/>
+                    <circle cx="394" cy="94" r="12"/>
+                    <circle cx="394" cy="166" r="12"/>
+                  </g>
+                </g>
+
+                <g class="training-chart">
+                  <path class="chart-grid" d="M56 384H468 M56 354H468 M56 324H468 M56 294H468"/>
+                  <path class="chart-axis" d="M56 390H468 M56 390V278"/>
+                  <g class="training-bars">
+                    <rect x="78" y="342" width="14" height="48" rx="7"/>
+                    <rect x="148" y="328" width="14" height="62" rx="7"/>
+                    <rect x="218" y="306" width="14" height="84" rx="7"/>
+                    <rect x="288" y="284" width="14" height="106" rx="7"/>
+                    <rect x="358" y="265" width="14" height="125" rx="7"/>
+                  </g>
+                  <path id="trainingPath" class="training-line" d="M56 372 L118 352 L182 358 L246 330 L310 305 L374 282 L466 250"/>
+                  <path class="training-line ghost" d="M56 372 L118 352 L182 358 L246 330 L310 305 L374 282 L466 250"/>
+                  <path id="lossPath" class="loss-line" d="M56 382 L118 376 L182 372 L246 366 L310 362 L374 358 L466 354"/>
+                  <circle class="chart-runner" r="5" filter="url(#softGlow)">
+                    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#trainingPath"/>
+                    </animateMotion>
+                  </circle>
+                  <circle class="chart-runner chart-runner--loss" r="4" filter="url(#softGlow)">
+                    <animateMotion dur="6s" begin="-1.6s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#lossPath"/>
+                    </animateMotion>
+                  </circle>
+                  <g class="chart-points">
+                    <circle cx="56" cy="372" r="5"/>
+                    <circle cx="118" cy="352" r="5"/>
+                    <circle cx="182" cy="358" r="5"/>
+                    <circle cx="246" cy="330" r="5"/>
+                    <circle cx="310" cy="305" r="5"/>
+                    <circle cx="374" cy="282" r="5"/>
+                    <circle cx="466" cy="250" r="5"/>
+                  </g>
+                  <g class="loss-points">
+                    <circle cx="56" cy="382" r="3.4"/>
+                    <circle cx="118" cy="376" r="3.4"/>
+                    <circle cx="182" cy="372" r="3.4"/>
+                    <circle cx="246" cy="366" r="3.4"/>
+                    <circle cx="310" cy="362" r="3.4"/>
+                    <circle cx="374" cy="358" r="3.4"/>
+                    <circle cx="466" cy="354" r="3.4"/>
+                  </g>
+                </g>
+              </svg>
+
+              <div class="metric-list">
+                <div><span>accuracy</span><strong>94%</strong></div>
+                <div><span>loss</span><strong>0.08</strong></div>
+                <div><span>latency</span><strong>32ms</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section reveal" id="about">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="title-icon icon-box" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M16 31c-4-1.8-7-5.5-7-10 0-6.6 5.4-12 12-12 4.8 0 8.9 2.8 10.8 6.8C36 16.4 39 20 39 24.2 39 29 35 33 30.2 33H28"/>
+                <path d="M18 28h12"/>
+                <path d="M18 34h12"/>
+                <path d="M24 22v18"/>
+                <path d="M16 22h16"/>
+              </svg>
+            </div>
+            <h2>Кто такой ML-инженер?</h2>
+          </div>
+
+          <p>ML-инженер обучает модели машинного обучения и помогает внедрять их в реальные продукты. Он работает на стыке программирования, математики и бизнеса: берет данные, находит закономерности, создает модель и следит, чтобы она приносила пользу пользователям и компании.</p>
+        </div>
+      </section>
+
+      <section class="section reveal" id="tasks">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="title-icon icon-box" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <circle cx="12" cy="15" r="4"/>
+                <circle cx="24" cy="24" r="5"/>
+                <circle cx="36" cy="13" r="4"/>
+                <circle cx="36" cy="35" r="4"/>
+                <path d="M15.5 17.2 20 21"/>
+                <path d="M28.2 21.5 33 15.5"/>
+                <path d="M28.8 27.4 33 33"/>
+                <path d="M12 31h10"/>
+                <path d="M12 37h18"/>
+              </svg>
+            </div>
+            <h2>Чем занимается ML-инженер</h2>
+          </div>
+
+          <div class="grid cards-grid">
+            <article class="glass-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M11 13c0-3 5.8-5.5 13-5.5S37 10 37 13s-5.8 5.5-13 5.5S11 16 11 13Z"/>
+                  <path d="M11 13v16c0 3 5.8 5.5 13 5.5S37 32 37 29V13"/>
+                  <path d="M11 21c0 3 5.8 5.5 13 5.5S37 24 37 21"/>
+                  <path d="M32 33l4 4 7-9"/>
+                </svg>
+              </div>
+              <h3>Собирает и готовит данные</h3>
+              <p>Проверяет качество данных, очищает ошибки и превращает сырую информацию в понятный набор признаков.</p>
+            </article>
+
+            <article class="glass-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="13" cy="15" r="4"/>
+                  <circle cx="24" cy="24" r="4"/>
+                  <circle cx="35" cy="15" r="4"/>
+                  <circle cx="35" cy="34" r="4"/>
+                  <path d="M16 17.5 21 22"/>
+                  <path d="M27 22 32.5 17"/>
+                  <path d="M27.5 26.4 32 32"/>
+                  <path d="M11 38h25"/>
+                </svg>
+              </div>
+              <h3>Обучает ML-модели</h3>
+              <p>Подбирает алгоритмы, обучает модели и сравнивает их по метрикам качества.</p>
+            </article>
+
+            <article class="glass-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <rect x="12" y="12" width="24" height="24" rx="7"/>
+                  <path d="M18 12V7"/>
+                  <path d="M24 12V7"/>
+                  <path d="M30 12V7"/>
+                  <path d="M18 41v-5"/>
+                  <path d="M24 41v-5"/>
+                  <path d="M30 41v-5"/>
+                  <path d="M19 23h10"/>
+                  <path d="M19 28h6"/>
+                  <path d="M33 24l4-3"/>
+                  <path d="M33 24l4 3"/>
+                </svg>
+              </div>
+              <h3>Создает AI-сервисы</h3>
+              <p>Делает рекомендации, прогнозы, классификаторы, чат-ботов, RAG-системы и AI-агентов.</p>
+            </article>
+
+            <article class="glass-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M16 34h17c4 0 7-3 7-7s-3-7-7-7c-.8-5.6-5.4-9.5-11-9.5-6 0-10.8 4.8-10.8 10.8C7.4 22.4 5 25.6 5 29.3 5 33.8 8.6 37 13 37"/>
+                  <path d="M24 34V20"/>
+                  <path d="M18 26l6-6 6 6"/>
+                </svg>
+              </div>
+              <h3>Запускает модели в production</h3>
+              <p>Помогает превратить эксперимент в работающий сервис, которым пользуются реальные люди.</p>
+            </article>
+
+            <article class="glass-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M10 31a14 14 0 1 1 28 0"/>
+                  <path d="M14 31h20"/>
+                  <path d="M24 31l8-10"/>
+                  <path d="M16 39l4-4 4 4 5-7 4 5"/>
+                </svg>
+              </div>
+              <h3>Следит за качеством</h3>
+              <p>Мониторит модель после запуска: точность, скорость, стоимость и стабильность работы.</p>
+            </article>
+
+            <article class="glass-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M10 12h28v22H10z"/>
+                  <path d="M15 29l6-7 5 4 8-10"/>
+                  <path d="M14 40h20"/>
+                  <path d="M24 34v6"/>
+                </svg>
+              </div>
+              <h3>Объясняет результат бизнесу</h3>
+              <p>Переводит технические выводы на понятный язык: что модель улучшила и какой эффект дала.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="career">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="title-icon icon-box" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M10 38h28"/>
+                <path d="M12 34c5-12 13-18 24-22"/>
+                <path d="M28 12h8v8"/>
+                <path d="M17 31l4 4 7-9"/>
+              </svg>
+            </div>
+            <h2>Как студенту войти в профессию</h2>
+          </div>
+
+          <div class="roadmap">
+            <div class="roadmap-step">
+              <span>1</span>
+              <h3>Освоить Python и SQL</h3>
+              <p>Научись писать код, работать с таблицами и базами данных.</p>
+              <div class="roadmap-actions">
+                <a class="small-button" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Скачать Python</a>
+                <a class="small-button small-button--light" href="https://www.postgresql.org/download/" target="_blank" rel="noopener">PostgreSQL</a>
+              </div>
+            </div>
+
+            <div class="roadmap-step">
+              <span>2</span>
+              <h3>Разобраться в математике</h3>
+              <p>Нужны основы статистики, линейной алгебры и вероятности.</p>
+              <div class="roadmap-actions">
+                <a class="small-button" href="https://stepik.org/course/181073/promo?search=9480292280" target="_blank" rel="noopener">Математика для Data Science</a>
+              </div>
+            </div>
+
+            <div class="roadmap-step">
+              <span>3</span>
+              <h3>Сделать первые ML-проекты</h3>
+              <p>Например: прогноз цен, анализ отзывов, классификация изображений или рекомендательная система.</p>
+              <div class="roadmap-actions">
+                <a class="small-button" href="https://www.kaggle.com/" target="_blank" rel="noopener">Датасеты и соревнования на Kaggle</a>
+              </div>
+            </div>
+
+            <div class="roadmap-step">
+              <span>4</span>
+              <h3>Собрать портфолио</h3>
+              <p>Оформи проекты на GitHub: описание задачи, данные, модель и результат.</p>
+              <div class="roadmap-actions">
+                <a class="small-button" href="https://docs.github.com/en/get-started/start-your-journey/hello-world" target="_blank" rel="noopener">Как оформить GitHub</a>
+              </div>
+            </div>
+
+            <div class="roadmap-step">
+              <span>5</span>
+              <h3>Искать стажировки</h3>
+              <p>Начинай с Junior ML, Data Analyst, Data Scientist Intern или AI Engineer Intern.</p>
+              <div class="roadmap-actions">
+                <a class="small-button" href="https://job.ertelecom.ru/internships/internship31" target="_blank" rel="noopener">Стажировки ЭР-Телеком</a>
+              </div>
+            </div>
+
+            <div class="roadmap-step">
+              <span>6</span>
+              <h3>Пройти собеседование</h3>
+              <p>Повтори основы Python, SQL, ML и подготовься рассказывать о своих проектах.</p>
+              <div class="roadmap-actions">
+                <a class="small-button" href="https://leetcode.com/" target="_blank" rel="noopener">Практика задач</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="day">
+        <div class="section-inner schedule-block">
+          <div class="section-title">
+            <div class="title-icon icon-box" aria-hidden="true">
+              <svg class="clock-clean-icon" viewBox="0 0 48 48">
+                <path d="M17 7 11 12"/>
+                <path d="M31 7 37 12"/>
+                <circle cx="24" cy="25" r="15"/>
+                <circle cx="24" cy="25" r="2.4"/>
+                <path d="M24 16v9l7 4"/>
+                <path d="M18 42h12"/>
+                <path d="M20 38l-3 4"/>
+                <path d="M28 38l3 4"/>
+              </svg>
+            </div>
+            <h2>Один день ML-инженера</h2>
+          </div>
+
+          <div class="schedule">
+            <div class="schedule-row">
+              <span class="schedule-time">09:30</span>
+              <p>Проверяет метрики моделей и ошибки после ночного запуска.</p>
+            </div>
+            <div class="schedule-row">
+              <span class="schedule-time">11:00</span>
+              <p>Созванивается с продуктовой командой и уточняет бизнес-задачу.</p>
+            </div>
+            <div class="schedule-row">
+              <span class="schedule-time">13:00</span>
+              <p>Готовит данные и тестирует новую гипотезу.</p>
+            </div>
+            <div class="schedule-row">
+              <span class="schedule-time">15:00</span>
+              <p>Обучает модель и сравнивает качество.</p>
+            </div>
+            <div class="schedule-row">
+              <span class="schedule-time">17:00</span>
+              <p>Пишет код для внедрения, документацию и планирует следующий эксперимент.</p>
+            </div>
+          </div>
+
+          <p class="conclusion">В этой профессии нет только «магии нейросетей» — много анализа, кода, проверки гипотез и общения с командой.</p>
+        </div>
+      </section>
+
+      <section class="section reveal" id="value">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="title-icon icon-box" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M10 36V14h28v22"/>
+                <path d="M15 31l6-8 6 5 8-12"/>
+                <path d="M8 36h32"/>
+              </svg>
+            </div>
+            <h2>Почему ML важен для ЭР-Телеком</h2>
+          </div>
+
+          <p class="section-intro">Для телеком-компании ML помогает делать сервисы умнее: персонализировать предложения, прогнозировать отток клиентов, автоматизировать бизнес-процессы и улучшать качество решений. В проектах ЭР-Телекома ML-инженеры могут работать с большими данными, LLM, RAG-системами, AI-агентами и production-сервисами, которые дают измеримый бизнес-эффект.</p>
+
+          <div class="grid mini-cards-grid">
+            <article class="glass-card small-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="15" r="6"/>
+                  <path d="M12 38c2.2-8 6.4-12 12-12s9.8 4 12 12"/>
+                  <path d="M36 12h5"/>
+                  <path d="M38.5 9.5v5"/>
+                </svg>
+              </div>
+              <h3>Персонализация</h3>
+              <p>Подобрать клиенту релевантное предложение, а не отправлять массовую рассылку.</p>
+            </article>
+
+            <article class="glass-card small-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M10 36h28"/>
+                  <path d="M10 36V12"/>
+                  <path d="M15 30c5-12 12-8 16-16l6 5"/>
+                  <path d="M32 14h7v7"/>
+                </svg>
+              </div>
+              <h3>Прогнозы</h3>
+              <p>Предсказывать отклик, отток, нагрузку и поведение пользователей.</p>
+            </article>
+
+            <article class="glass-card small-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M24 8v8"/>
+                  <path d="M24 32v8"/>
+                  <path d="M8 24h8"/>
+                  <path d="M32 24h8"/>
+                  <circle cx="24" cy="24" r="8"/>
+                  <path d="M21 24l2 2 5-5"/>
+                </svg>
+              </div>
+              <h3>Автоматизация</h3>
+              <p>Создавать AI-инструменты, которые ускоряют работу сотрудников.</p>
+            </article>
+
+            <article class="glass-card small-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M12 36h24"/>
+                  <path d="M16 36V24"/>
+                  <path d="M24 36V16"/>
+                  <path d="M32 36V20"/>
+                  <path d="M12 14l8 6 7-9 9 6"/>
+                </svg>
+              </div>
+              <h3>Бизнес-эффект</h3>
+              <p>ML помогает принимать решения быстрее, точнее и на основе данных.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="quiz">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="title-icon icon-box" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="16"/>
+                <path d="M18.5 19a5.5 5.5 0 0 1 11 0c0 4.4-5.5 4.4-5.5 9"/>
+                <path d="M24 34h.01"/>
+              </svg>
+            </div>
+            <h2>Проверь, подходит ли тебе профессия</h2>
+          </div>
+
+          <div class="interactive-grid">
+            <article class="interactive-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M8 24s6-10 16-10 16 10 16 10-6 10-16 10S8 24 8 24Z"/>
+                  <circle cx="24" cy="24" r="5"/>
+                  <path d="M35 35l5 5"/>
+                </svg>
+              </div>
+              <h3>Любишь искать закономерности?</h3>
+              <p class="hint">В ML это основа работы с данными.</p>
+            </article>
+
+            <article class="interactive-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M18 16l-8 8 8 8"/>
+                  <path d="M30 16l8 8-8 8"/>
+                  <path d="M27 11l-6 26"/>
+                </svg>
+              </div>
+              <h3>Нравится программировать?</h3>
+              <p class="hint">Python — главный инструмент ML-инженера.</p>
+            </article>
+
+            <article class="interactive-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <rect x="12" y="12" width="24" height="24" rx="7"/>
+                  <path d="M18 24h12"/>
+                  <path d="M20 30h8"/>
+                  <path d="M24 12V7"/>
+                  <path d="M36 24h5"/>
+                  <path d="M7 24h5"/>
+                </svg>
+              </div>
+              <h3>Интересно, как работает ИИ?</h3>
+              <p class="hint">Ты будешь не просто пользоваться ИИ, а создавать его части.</p>
+            </article>
+
+            <article class="interactive-card">
+              <div class="card-icon icon-box" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M15 18a10 10 0 0 1 17-5l3 3"/>
+                  <path d="M35 10v6h-6"/>
+                  <path d="M33 30a10 10 0 0 1-17 5l-3-3"/>
+                  <path d="M13 38v-6h6"/>
+                </svg>
+              </div>
+              <h3>Готов постоянно учиться?</h3>
+              <p class="hint">Инструменты ML быстро меняются, поэтому рост здесь бесконечный.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="career-test">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="title-icon icon-box" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M14 12h20v24H14z"/>
+                <path d="M19 19h10"/>
+                <path d="M19 25h7"/>
+                <path d="M18 32l3 3 8-9"/>
+              </svg>
+            </div>
+            <h2>Подходит ли тебе профессия ML-инженера?</h2>
+          </div>
+
+          <p class="section-intro">Ответь на вопросы и узнай, насколько тебе может подойти эта профессия.</p>
+
+          <div class="test-container">
+            <div class="test-question">
+              <h3>Тебе нравится решать логические задачи?</h3>
+              <button class="test-answer" data-score="1">Да</button>
+              <button class="test-answer" data-score="0">Нет</button>
+            </div>
+
+            <div class="test-question">
+              <h3>Интересно разбираться, как работают нейросети и ИИ?</h3>
+              <button class="test-answer" data-score="1">Да</button>
+              <button class="test-answer" data-score="0">Нет</button>
+            </div>
+
+            <div class="test-question">
+              <h3>Готов изучать математику и статистику?</h3>
+              <button class="test-answer" data-score="1">Да</button>
+              <button class="test-answer" data-score="0">Нет</button>
+            </div>
+
+            <div class="test-question">
+              <h3>Тебе нравится программирование?</h3>
+              <button class="test-answer" data-score="1">Да</button>
+              <button class="test-answer" data-score="0">Нет</button>
+            </div>
+
+            <div class="test-question">
+              <h3>Готов постоянно изучать новые технологии?</h3>
+              <button class="test-answer" data-score="1">Да</button>
+              <button class="test-answer" data-score="0">Нет</button>
+            </div>
+
+            <button id="showResult" class="primary-button">Узнать результат</button>
+            <div id="testResult" class="test-result"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
